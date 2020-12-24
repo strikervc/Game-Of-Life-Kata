@@ -33,3 +33,20 @@ describe ('test 02', () => {
 
     })
 })
+
+describe ('test 03', () => {
+    it('a cell alive should live on to the next generation if is in the top-middle and it have two live neighbours.', function(){
+        const startingBoard = [
+            [1, 1, 1],
+            [0, 0, 0],
+        ]
+        const nextStepBoard = [
+            [0, 1, 0],
+            [0, 0, 0],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal(nextStepBoard);
+
+    })
+})
