@@ -13,3 +13,23 @@ describe ('test 01', () => {
 
     })
 })
+
+describe ('test 02', () => {
+    it('a cell alive should die as if by underpopulation if is in the middle and it have fewer than two live neighbours.', function(){
+        const startingBoard = [
+            [0, 0, 0],
+            [0, 1, 0],
+            [0, 0, 0],
+        ]
+
+        const nextStepBoard = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal(nextStepBoard);
+
+    })
+})

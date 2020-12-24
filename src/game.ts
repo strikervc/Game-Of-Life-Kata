@@ -3,4 +3,10 @@ export class Game {
     constructor(board: Array<Array<number>>){
         this.board = board
     }
+
+    step() {
+        this.board = this.board.map(row => {
+            return row.map(c => 0)
+        })
+    }
 }
