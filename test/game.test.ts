@@ -8,6 +8,34 @@ describe ('test 01', () => {
             [1, 0, 0],
         ]
         expect(new Game(startingBoard).board).to.equal(startingBoard);
+    })
+})
 
+describe ('test 02', () => {
+    it('an alive cell living in the middle should die if it have less than two live neighbours', function(){
+        const startingBoard = [
+            [0, 0, 0],
+            [0, 1, 0],
+            [0, 0, 0],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal([[0, 0, 0], [0, 0, 0], [0, 0, 0]]);
+    })
+})
+
+describe ('test 03', () => {
+    it('an alive cell living in the top-middle should still alive to the next generation if it have two live neighbours.', function(){
+        const startingBoard = [
+            [1, 1, 1],
+            [0, 0, 0],
+        ]
+        const nextStepBoard = [
+            [0, 1, 0],
+            [0, 0, 0],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal([[0, 0, 0], [0, 0, 0]]);
     })
 })
