@@ -35,3 +35,17 @@ describe ('test 03', () => {
         expect(game.board).to.equal([[0, 1, 0], [0, 0, 0]]);
     })
 })
+
+describe ('test 04', () => {
+    it('an alive cell living in the middle should die if it have four or more live neighbours.', function(){
+        const startingBoard = [
+            [1, 0, 1],
+            [1, 1, 1],
+            [0, 0, 0],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal([[1, 0, 1], [1, 0, 1], [0, 0, 0]]);
+    })
+})
+
