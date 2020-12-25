@@ -1,0 +1,58 @@
+Kata Game of Life
+1. Cualquier célula viva con menos de dos vecinos vivos muere, como por falta de población.
+2. Cualquier célula viva con dos o tres vecinos vivos vive para la próxima generación.
+3. Cualquier célula viva con más de tres vecinos vivos muere, como por superpoblación.
+4. Cualquier célula muerta con exactamente tres vecinos vivos se convierte en una célula viva, como por reproducción.
+
+Casos de prueba: 
+1. should return correctly the initial cell configuration
+INPUT: N/A
+RETURNS: 
+[0, 0, 0],
+[1, 0, 0],
+
+2. an alive cell living in the middle should die if it have less than two live neighbours.
+INPUT: 
+[0, 0, 0],
+[0, 1, 0],
+[0, 0, 0],
+
+RETURNS: 
+[0, 0, 0],
+[0, 0, 0],
+[0, 0, 0],
+
+
+3. an alive cell living in the top-middle should still alive to the next generation if it have two live neighbours.
+INPUT: 
+[1, 1, 1],
+[0, 0, 0],
+
+RETURNS: 
+[0, 1, 0],
+[0, 0, 0],
+
+
+4. an alive cell living in the middle should die if it have four or more live neighbours.
+INPUT: 
+[1, 0, 1],
+[1, 1, 1],
+[0, 0, 0],
+
+RETURNS: 
+[1, 0, 1],
+[1, 0, 1],
+[0, 0, 0],
+
+
+5. an dead cell in the middle should becomes alive if it have three live neighbours.
+INPUT: 
+[1, 0, 1],
+[0, 0, 0],
+[0, 0, 1],
+
+RETURNS: 
+[0, 0, 0],
+[0, 1, 0],
+[0, 0, 0],
+
