@@ -15,8 +15,10 @@ export class Game {
                        NLN += (this.board?.[y]?.[x] || 0)
                    }
                }
-
                if (cell && [2,3].includes(NLN)) return 1
+               
+
+               if (!cell && NLN ===3) return 1
                return 0
            })
        })

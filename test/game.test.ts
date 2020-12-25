@@ -49,3 +49,17 @@ describe ('test 04', () => {
     })
 })
 
+describe ('test 05', () => {
+    it('a dead cell in the middle should becomes alive if it have three live neighbours.', function(){
+        const startingBoard = [
+            [1, 0, 1],
+            [0, 0, 0],
+            [0, 0, 1],
+        ]
+        const game = new Game(startingBoard)
+        game.step()
+        expect(game.board).to.equal([[0, 0, 0], [0, 1, 0], [0, 0, 0]]);
+    })
+})
+
+
