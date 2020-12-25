@@ -28,14 +28,10 @@ describe ('test 03', () => {
     it('an alive cell living in the top-middle should still alive to the next generation if it have two live neighbours.', function(){
         const startingBoard = [
             [1, 1, 1],
-            [0, 0, 0],
-        ]
-        const nextStepBoard = [
-            [0, 1, 0],
-            [0, 0, 0],
+            [0, 0, 0]
         ]
         const game = new Game(startingBoard)
         game.step()
-        expect(game.board).to.equal([[0, 0, 0], [0, 0, 0]]);
+        expect(game.board).to.equal([[0, 1, 0], [0, 0, 0]]);
     })
 })
